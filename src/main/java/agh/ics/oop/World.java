@@ -31,8 +31,10 @@ public class World {
 //        animal2.move(MoveDirection.BACKWARD);
 //        System.out.println(animal2);
         String[] testTab = {"f","b","r","l","f","f","r","r","f","f","f","f","f","f","f","f"};
+//        List<MoveDirection> directions = OptionsParser.translate(testTab); List<Vector2d> positions = List.of(new Vector2d(2,2)
+//                , new Vector2d(3,4)); Simulation simulation = new Simulation(positions, directions, new RectangularMap(4,4)); simulation.run();
         List<MoveDirection> directions = OptionsParser.translate(testTab); List<Vector2d> positions = List.of(new Vector2d(2,2)
-                , new Vector2d(3,4)); Simulation simulation = new Simulation(positions, directions, new RectangularMap(4,4)); simulation.run();
+                , new Vector2d(3,4)); Simulation simulation = new Simulation(positions, directions, new GrassField(10)); simulation.run();
         System.out.println("system zakończył działanie");
     }
     public static void run(List<MoveDirection> argsPassed){
