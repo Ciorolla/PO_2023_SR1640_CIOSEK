@@ -5,6 +5,7 @@ import agh.ics.oop.OptionsParser;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import static org.junit.jupiter.api.Assertions.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SimulationTest {
@@ -22,6 +23,8 @@ public void testRun(){
         Simulation testEngine=new Simulation(List.of(new Vector2d(2,0),
                 new Vector2d(3,5)),testDirections,testMap);
         testEngine.run();
-        assert map.toString().equals(testMap.toString());
+        assertEquals(map.toString(),testMap.toString());
         }
+
+
 }

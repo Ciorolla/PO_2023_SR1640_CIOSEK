@@ -14,6 +14,7 @@ public class RectangularMap extends AbstractWorldMap{
     public RectangularMap(int width, int height) {
         this.width = width;
         this.height = height;
+        this.borders = new Boundary(getMapLimits()[0],getMapLimits()[1]);
     }
 
     @Override
@@ -33,5 +34,7 @@ public class RectangularMap extends AbstractWorldMap{
     public Vector2d[] getMapLimits() {
         return new Vector2d[]{new Vector2d(0, 0), new Vector2d(width, height)};
     }
+
+
 
 }

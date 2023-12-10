@@ -24,7 +24,8 @@ public class OptionsParser {
                 case "r":
                     toReturn.add(MoveDirection.RIGHT);
                     break;
-
+                default:
+                    throw new IllegalArgumentException(toTranslate[i] + " doesnt belong to the list of valid arguments ");
             }
 
 
