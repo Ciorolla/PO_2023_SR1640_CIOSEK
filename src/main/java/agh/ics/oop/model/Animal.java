@@ -23,6 +23,7 @@ public class Animal implements WorldElement{
         };
     }
     public void move(MoveDirection direction, MoveValidator validator){
+
         switch (direction){
             case RIGHT :{ orientation = orientation.next();
             break;}
@@ -42,6 +43,7 @@ public class Animal implements WorldElement{
                 }
                 break;
             }
+
         }
     }
 }

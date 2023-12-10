@@ -8,8 +8,7 @@ import java.util.stream.Stream;
 
 public class GrassField extends AbstractWorldMap{
     private final Map<Vector2d, Grass> grassMap = new HashMap<>();
-//    private final MapBoundary boundary = new MapBoundary(this);
-//    chciałem sobie już ten rekord wsadzić z następnego laba ale nie wiem czy mi wolno :"
+
 
     public GrassField(int grassNumber) {
         for (int i = 0; i < grassNumber; i++) {
@@ -18,11 +17,13 @@ public class GrassField extends AbstractWorldMap{
 
             Grass grass = new Grass(position);
             if (grassMap.put(position, grass) == null) {
-//                boundary.addElement(grass.getPosition());
             } else {
                 i--;
             }
         }
+        this.borders = new Boundary(getMapLimits()[0],getMapLimits()[1]);
+
+
     }
 
     @Override
@@ -61,5 +62,7 @@ public class GrassField extends AbstractWorldMap{
         }
         return new Vector2d[]{new Vector2d(0, 0), new Vector2d(biggestX, biggestY)};
     }
+
+
 
 }

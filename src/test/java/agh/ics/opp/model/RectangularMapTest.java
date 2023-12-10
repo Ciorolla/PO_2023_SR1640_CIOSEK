@@ -17,7 +17,7 @@ public class RectangularMapTest {
     }
 
     @Test
-    public void testPlace() {
+    public void testPlace() throws PositionAlreadyOccupiedException {
         RectangularMap map = new RectangularMap(5, 10);
         Animal testAnimal = new Animal();
         assert map.place(testAnimal);

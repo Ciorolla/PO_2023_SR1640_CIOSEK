@@ -20,13 +20,13 @@ public class GrassFieldTest {
     }
 
     @Test
-    public void testPlace() {
+    public void testPlace() throws PositionAlreadyOccupiedException {
         GrassField map = new GrassField(10);
         Animal testAnimal = new Animal();
         assert map.place(testAnimal);
         try {
             map.place(testAnimal);
-        } catch (IllegalArgumentException e) {
+        } catch (PositionAlreadyOccupiedException e) {
             assert true; // Powinno wywalać tu błąd
         }
     }

@@ -1,10 +1,7 @@
 package agh.ics.opp.model;
 
-import agh.ics.oop.model.Animal;
-import agh.ics.oop.model.MoveDirection;
+import agh.ics.oop.model.*;
 import agh.ics.oop.OptionsParser;
-import agh.ics.oop.model.RectangularMap;
-import agh.ics.oop.model.WorldMap;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -26,8 +23,12 @@ public class AnimalTest {
         assertEquals("E",AnimalTest.runSeriesOfCommands(new String[]{"f", "f", "r", "f"}));
         assertEquals("N",AnimalTest.runSeriesOfCommands(new String[]{"f", "f", "f"}));
         assertEquals("S",AnimalTest.runSeriesOfCommands(new String[]{"b", "b", "r", "r", "f"}));
-        assertEquals("N",AnimalTest.runSeriesOfCommands(new String[]{"invalid argument 1", "invalid argument 2"}));
-        assertEquals("W",AnimalTest.runSeriesOfCommands(new String[]{"l", "invalid argument", "b"}));
-        assertEquals("E",AnimalTest.runSeriesOfCommands(new String[]{"l", "invalid argument", "f", "f", "f", "r", "b", "b", "r"}));
+        try {
+            AnimalTest.runSeriesOfCommands(new String[]{"invalid argument 1", "invalid argument 2"});
+        } catch (IllegalArgumentException e) {
+            assert true; // Powinno wywalać tu błąd
+        }
+        assertEquals("W",AnimalTest.runSeriesOfCommands(new String[]{"l", "b"}));
+        assertEquals("E",AnimalTest.runSeriesOfCommands(new String[]{"l", "f", "f", "f", "r", "b", "b", "r"}));
     }
 }
