@@ -11,6 +11,7 @@ public class GrassField extends AbstractWorldMap{
 
 
     public GrassField(int grassNumber) {
+
         for (int i = 0; i < grassNumber; i++) {
             Vector2d position = new Vector2d((int)(Math.random() * Math.sqrt(grassNumber*10)),
                     (int)(Math.random() * Math.sqrt(grassNumber*10)));
@@ -23,7 +24,11 @@ public class GrassField extends AbstractWorldMap{
         }
         this.borders = new Boundary(getMapLimits()[0],getMapLimits()[1]);
 
+    }
 
+    public GrassField(int grassNumber, int id ){
+        this(grassNumber);
+        this.id=id;
     }
 
     @Override

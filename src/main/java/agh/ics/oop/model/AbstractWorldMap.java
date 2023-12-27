@@ -10,6 +10,8 @@ public abstract class AbstractWorldMap implements WorldMap{
     protected final Map<Vector2d, Animal> animals = new HashMap<>();
     protected final List<MapChangeListener> Subscribers = new ArrayList<>();
     protected Boundary borders;
+    protected int id;
+
 
     @Override
     public boolean place(Animal animal) throws PositionAlreadyOccupiedException {
@@ -42,6 +44,10 @@ public abstract class AbstractWorldMap implements WorldMap{
         } catch (PositionAlreadyOccupiedException e) {
             e.printStackTrace();
         }
+    }
+    @Override
+    public int getId(){
+        return id;
     }
 
     public void unregister(MapChangeListener Sub){

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-public class Simulation {
+public class Simulation implements Runnable {
 
     private List <Animal> animals = new ArrayList<>();
     private List <MoveDirection> moves;
@@ -26,6 +26,7 @@ public class Simulation {
         this.moves = moves;
         this.map=animalMap;
     }
+    @Override
     public void run(){
         int distance = moves.size();
         int runners = animals.size();
